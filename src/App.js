@@ -1,14 +1,13 @@
 import logo from './logo.svg';
 import './App.css';
 import Products from './Products';
+import {a, b} from './Products';  // Importing named exports
 
 function App() {
   return (
+    // console.log(a, b),
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <Products />  {/* This is the component we imported */}
-      </header>
+      <Products />
       
     </div>
   );
