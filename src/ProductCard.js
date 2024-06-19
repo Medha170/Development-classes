@@ -1,9 +1,12 @@
 import React from 'react';
 import './ProductCard.css';
-import { useRef } from 'react';
+import { useRef, useState} from 'react';
 
 function ProductCard({title,price}){
     let pRef = useRef(0);
+    let inputRef = useRef(0);
+    let outputRef = useRef(0);
+    let [inputV, setInputV] = useState('Class');
     // console.log(props);
     function productTitle(){
         console.log(title);
@@ -11,13 +14,26 @@ function ProductCard({title,price}){
             pRef.current.style.display = "block";
         }else{
             pRef.current.style.display = "none";
-        
         }
+    }
+    console.log("Rerendered", inputV);
+    function displayOutput(e){
+        // console.log(inputRef.current.value);
+        // console.log(outputRef.current.innerText);
+        // outputRef.current.innerText = 'Over here the output would arrive : ${inputRef.current.value}';
+        // outputRef.current.innerText = `Over here the output would arrive: ${inputRef.current.value}`;
+        setInputV(e.target.value);
+        // outputRef.current.innerText = `Over here the output would arrive: ${inputV}`;
     }
     return (
         <div className="product-card">
             <p onClick={productTitle}>{title}</p>
             <p className="price" ref={pRef}>{price}</p>
+            <input type='text' onChange={displayOutput} value={inputV}></input>
+            <p>
+            Over here the output would arrive: {inputV}
+            </p>
+            
         </div>
     );
 }
