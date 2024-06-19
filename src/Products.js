@@ -3,7 +3,7 @@ import Effect from "./effect/effect";
 import { useState } from "react";
 import useWindowSize from "./hooks/useWindowSize"
 
-function Products(){
+function Products({cart, incrementQty, decrementQty}){
     const products = [
         {
         id: 1,
@@ -59,7 +59,7 @@ function Products(){
             {
                 products.map(function(item){
                     return (
-                        <ProductCard title={item.title} price={item.price}/>
+                        <ProductCard product={item} cart={cart} incrementQty={incrementQty} decrementQty={decrementQty}/>
                     )
                 })
             }

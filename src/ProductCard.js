@@ -1,15 +1,16 @@
 import React from 'react';
 import './ProductCard.css';
 import { useRef, useState} from 'react';
+import AddToCart from './AddToCart/AddToCart'
 
-function ProductCard({title,price}){
+function ProductCard({product, cart, incrementQty, decrementQty}){
     let pRef = useRef(0);
     let inputRef = useRef(0);
     let outputRef = useRef(0);
     let [inputV, setInputV] = useState('Class');
     // console.log(props);
     function productTitle(){
-        console.log(title);
+        // console.log(product.title);
         if (pRef.current.style.display === "none"){
             pRef.current.style.display = "block";
         }else{
@@ -27,13 +28,13 @@ function ProductCard({title,price}){
     }
     return (
         <div className="product-card">
-            <p onClick={productTitle}>{title}</p>
-            <p className="price" ref={pRef}>{price}</p>
+            <p onClick={productTitle}>{product.title}</p>
+            <p className="price" ref={pRef}>{product.price}</p>
             <input type='text' onChange={displayOutput} value={inputV}></input>
             <p>
             Over here the output would arrive: {inputV}
             </p>
-            
+            <AddToCart product={product} cart={cart} incrementQty={incrementQty} decrementQty={decrementQty}/>
         </div>
     );
 }

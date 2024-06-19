@@ -14,7 +14,9 @@ function useWindowSize(){
     }
     useEffect(() => {
         window.addEventListener('resize', calcSize)
-        
+        return (() => {
+            window.removeEventListener('resize', calcSize);
+        })
     }, [])
 
     return windowSize;
