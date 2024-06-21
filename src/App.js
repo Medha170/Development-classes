@@ -1,8 +1,9 @@
 import logo from './logo.svg';
 import './App.css';
-import Products from './Products';
-import {a, b} from './Products';  // Importing named exports
+import Products from './components/Product/Products';
+// import {a, b} from './Products';  // Importing named exports
 import {useState} from 'react';
+import cartContext from './Context/cartContext';
 
 function App() {
   // [addQty, setAddQty] = useState(0);
@@ -35,10 +36,12 @@ function App() {
   console.log(cart);
   return (
     // console.log(a, b),
-    <div className="App">
-      <Products cart={cart} incrementQty={incrementQty} decrementQty={decrementQty}/>
+    <cartContext.Provider value={{cart, incrementQty, decrementQty}}>
+      <div className="App">
+        <Products cart={cart} incrementQty={incrementQty} decrementQty={decrementQty}/>
       
-    </div>
+      </div>
+    </cartContext.Provider>
   );
 }
 

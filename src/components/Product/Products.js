@@ -1,7 +1,7 @@
-import ProductCard from "./ProductCard";
-import Effect from "./effect/effect";
+import ProductCard from "../ProductCard/ProductCard";
+import Effect from "./../effect/effect";
 import { useState } from "react";
-import useWindowSize from "./hooks/useWindowSize"
+import useWindowSize from "./../../hooks/useWindowSize"
 
 function Products({cart, incrementQty, decrementQty}){
     const products = [

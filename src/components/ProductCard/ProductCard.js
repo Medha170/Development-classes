@@ -1,7 +1,7 @@
 import React from 'react';
 import './ProductCard.css';
 import { useRef, useState} from 'react';
-import AddToCart from './AddToCart/AddToCart'
+import AddToCart from './../AddToCart/AddToCart'
 
 function ProductCard({product, cart, incrementQty, decrementQty}){
     let pRef = useRef(0);

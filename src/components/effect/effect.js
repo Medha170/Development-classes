@@ -1,4 +1,5 @@
-import {useEffect, useState} from 'react';
+import { useEffect, useState } from 'react';
+
 function effect(){
     let [count, setCount] = useState(0);
     let [count1, setCount1] = useState(0);
