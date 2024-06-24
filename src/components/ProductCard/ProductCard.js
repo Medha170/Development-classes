@@ -3,7 +3,7 @@ import './ProductCard.css';
 import { useRef, useState} from 'react';
 import AddToCart from './../AddToCart/AddToCart'
 
-function ProductCard({product, cart, incrementQty, decrementQty}){
+function ProductCard({product}){
     let pRef = useRef(0);
     let inputRef = useRef(0);
     let outputRef = useRef(0);
@@ -34,7 +34,7 @@ function ProductCard({product, cart, incrementQty, decrementQty}){
             <p>
             Over here the output would arrive: {inputV}
             </p>
-            <AddToCart product={product} cart={cart} incrementQty={incrementQty} decrementQty={decrementQty}/>
+            <AddToCart product={product} />
         </div>
     );
 }

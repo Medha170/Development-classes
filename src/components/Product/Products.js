@@ -1,9 +1,9 @@
 import ProductCard from "../ProductCard/ProductCard";
 import Effect from "./../effect/effect";
-import { useState } from "react";
+import React,{ useState } from "react";
 import useWindowSize from "./../../hooks/useWindowSize"
 
-function Products({cart, incrementQty, decrementQty}){
+function Products(){
     const products = [
         {
         id: 1,
@@ -59,7 +59,7 @@ function Products({cart, incrementQty, decrementQty}){
             {
                 products.map(function(item){
                     return (
-                        <ProductCard product={item} cart={cart} incrementQty={incrementQty} decrementQty={decrementQty}/>
+                        <ProductCard product={item} />
                     )
                 })
             }
@@ -70,7 +70,7 @@ function Products({cart, incrementQty, decrementQty}){
 
 export let a = 10;
 export let b = 20;
-export default Products;
+export default React.memo(Products);
 
 // oldDom = [
 // <ProductCard title="Title 1" />,

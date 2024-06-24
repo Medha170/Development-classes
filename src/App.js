@@ -38,7 +38,7 @@ function App() {
     // console.log(a, b),
     <cartContext.Provider value={{cart, incrementQty, decrementQty}}>
       <div className="App">
-        <Products cart={cart} incrementQty={incrementQty} decrementQty={decrementQty}/>
+        <Products />
       
       </div>
     </cartContext.Provider>
