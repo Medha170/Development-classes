@@ -1,7 +1,7 @@
 import React from 'react';
 import './ProductCard.css';
 import { useRef, useState} from 'react';
-import AddToCart from './../AddToCart/AddToCart'
+import ReduxAddToCart from './../ReduxAddToCart/ReduxAddToCart'
 
 function ProductCard({product}){
     let pRef = useRef(0);
@@ -34,7 +34,7 @@ function ProductCard({product}){
             <p>
             Over here the output would arrive: {inputV}
             </p>
-            <AddToCart product={product} />
+            <ReduxAddToCart product={product} />
         </div>
     );
 }
