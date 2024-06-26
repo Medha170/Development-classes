@@ -4,6 +4,7 @@ import Products from './components/Product/Products';
 // import {a, b} from './Products';  // Importing named exports
 import {useState} from 'react';
 import cartContext from './Context/cartContext';
+import Cart from './components/Cart/Cart';
 
 function App() {
   // [addQty, setAddQty] = useState(0);
@@ -39,7 +40,7 @@ function App() {
     <cartContext.Provider value={{cart, incrementQty, decrementQty}}>
       <div className="App">
         <Products />
-      
+        <Cart />
       </div>
     </cartContext.Provider>
   );
