@@ -28,7 +28,7 @@ function ProductCard({product}){
     }
     return (
         <div className="product-card">
-            <p onClick={productTitle}>{product.title}</p>
+            <p onClick={productTitle}>{product.name}</p>
             <p className="price" ref={pRef}>{product.price}</p>
             <input type='text' onChange={displayOutput} value={inputV}></input>
             <p>

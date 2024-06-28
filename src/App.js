@@ -5,6 +5,7 @@ import Products from './components/Product/Products';
 import {useState} from 'react';
 import cartContext from './Context/cartContext';
 import Cart from './components/Cart/Cart';
+import Categories from './components/Categories';
 
 function App() {
   // [addQty, setAddQty] = useState(0);
@@ -39,6 +40,7 @@ function App() {
     // console.log(a, b),
     <cartContext.Provider value={{cart, incrementQty, decrementQty}}>
       <div className="App">
+        <Categories />
         <Products />
         <Cart />
       </div>

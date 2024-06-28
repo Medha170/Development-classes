@@ -14,7 +14,7 @@ function ReduxAddToCart({product}){
     }
 
     let quantity = useSelector((state) => {
-        return state.items[product.id]?.quantity || 0;
+        return state.cart.items[product.id]?.quantity || 0;
     });
 
     // const quantity = cart[product.id] ? cart[product.id].quantity : 0;
